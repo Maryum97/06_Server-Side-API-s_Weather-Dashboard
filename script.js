@@ -1,6 +1,9 @@
 // call classes from search column
+let searchBtn = $("#search-btn");
+let searchInput = $("#search-input");
 
 // set classes to city-info column // including current date
+let  cityName = 
 
 // set current date using moment.js
 
