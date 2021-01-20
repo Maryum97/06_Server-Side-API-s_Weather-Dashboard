@@ -24,14 +24,23 @@ if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
 }
 
 else{
-    console.log("searchHistory loaded into searchHistoryArr");
+    console.log("searchHistory loaded into searchHistoryDiv");
+    // else, call the function that renders search history into the serach history div
     // renderSearchHistory();
 }
 
-// add event listener to search button
+// Add event listener to search button
+searchBtn.on("click", function(e) {
+    e.preventDefault();
+    if (searchInput.val() === "") {
+        alert("You must enter a city");
+        return;
+    }
+
+})
 
 // get items from local storage to save in search history
 
 // append new elements to the info column so that info of previous city is replaced with that of new city
 
-// set 5 day forecast 
+// set 5 day forecast
