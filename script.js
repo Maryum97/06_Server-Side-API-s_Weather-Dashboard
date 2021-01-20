@@ -4,8 +4,8 @@ let searchInput = $("#search-input");
 
 // set classes to city-info column // including current date
 let  cityName = $(".city-name");
-let currentDate = $("current-date");
-let weatherIcon = $("weather-icon");
+let currentDate = $(".current-date");
+let weatherIcon = $(".weather-icon");
 
 // set current date using moment.js
 
