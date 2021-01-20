@@ -6,6 +6,7 @@ let searchInput = $(".search-input");
 let  cityName = $(".city-name");
 let currentDate = $(".current-date");
 let weatherIcon = $(".weather-icon");
+let searchHistory = $(".search-history");
 
 // set current date using moment.js
 
