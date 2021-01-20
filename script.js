@@ -1,12 +1,18 @@
-// call classes from search column
+// Call classes from search column
 let searchBtn = $(".search-button");
 let searchInput = $(".search-input");
+let searchHistory = $(".search-history");
 
-// set classes to city-info column // including current date
-let  cityName = $(".city-name");
+// Call classes from city-info column 
+let cityName = $(".city-name");
 let currentDate = $(".current-date");
 let weatherIcon = $(".weather-icon");
-let searchHistory = $(".search-history");
+let temperature = $(".temperature");
+let humidity = $(".humidity");
+let windSpeed = $(".wind-speed");
+let uvIndex = $(".uv-index");
+let forecastHeader = $(".5-day-forecast-header");
+let cardRow = $(".card-row");
 
 // set current date using moment.js
 
