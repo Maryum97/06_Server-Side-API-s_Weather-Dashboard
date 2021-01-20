@@ -3,7 +3,9 @@ let searchBtn = $("#search-btn");
 let searchInput = $("#search-input");
 
 // set classes to city-info column // including current date
-let  cityName = 
+let  cityName = $(".city-name");
+let currentDate = $("current-date");
+let weatherIcon = $("weather-icon");
 
 // set current date using moment.js
 
@@ -15,4 +17,4 @@ let  cityName =
 
 // append new elements to the info column so that info of previous city is replaced with that of new city
 
-// set 5 day forecast
+// set 5 day forecast 
