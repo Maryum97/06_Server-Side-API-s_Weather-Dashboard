@@ -1,6 +1,6 @@
 // call classes from search column
-let searchBtn = $("#search-btn");
-let searchInput = $("#search-input");
+let searchBtn = $(".search-button");
+let searchInput = $(".search-input");
 
 // set classes to city-info column // including current date
 let  cityName = $(".city-name");
