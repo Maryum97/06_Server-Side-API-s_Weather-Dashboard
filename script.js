@@ -14,7 +14,9 @@ let uvIndex = $(".uv-index");
 let forecastHeader = $(".5-day-forecast-header");
 let cardRow = $(".card-row");
 
-// set current date using moment.js
+// set current date using moment.js; create a current date variable
+var today = moment().format("DD/MM/YYYY");
+console.log(today);
 
 // set items to local storage
 
