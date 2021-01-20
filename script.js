@@ -65,8 +65,14 @@ function renderSearchHistory() {
 }
 
 
-function renderWeatherData() {
-
+function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, cityWeatherIcon, uvVal) {
+    cityNameEl.text(cityName)
+    currentDateEl.text(`(${today})`)
+    tempEl.text(`Temperature: ${cityTemp} °F`);
+    humidityEl.text(`Humidity: ${cityHumidity}%`);
+    windSpeedEl.text(`Wind Speed: ${cityWindSpeed} MPH`);
+    uvIndexEl.text(`UV Index: ${uvVal}`);
+    weatherIconEl.attr("src", cityWeatherIcon);
 }
 
 function getWeather() {
