@@ -14,6 +14,9 @@ let uvIndexEL = $(".uv-index");
 let forecastHeaderEL = $(".5-day-forecast-header");
 let cardRow = $(".card-row");
 
+// Define API key
+let apiKey = "cef90c55a8408d1a21a2c56bf78fb838";
+
 // Set current date using moment.js in a current date variable
 var today = moment().format("DD/MM/YYYY");
 console.log(today);
@@ -74,6 +77,7 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     windSpeedEl.text(`Wind Speed: ${cityWindSpeed} MPH`);
     uvIndexEl.text(`UV Index: ${uvVal}`);
     weatherIconEl.attr("src", cityWeatherIcon);
+    forecastHeaderEL.text("5 Day Forecast");
 }
 
 // Get the weather information from external source for desired city
