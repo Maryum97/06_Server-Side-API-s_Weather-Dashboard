@@ -39,9 +39,35 @@ searchBtn.on("click", function(e) {
     }
 
     console.log("clicked button")
-    // getWeather(searchInput.val());
+    getWeather(searchInput.val());
 
 });
+
+// When a city is appended to search history, ...
+// its info must show on the page when it is clicked on in the search history list
+$(document).on("click", ".historyEntry", function() {
+    console.log("clicked history item")
+    let thisElement = $(this);
+    getWeather(thisElement.text());
+})
+
+// Define functions
+
+function renderSearchHistory() {
+
+}
+
+function getWeather() {
+
+}
+
+function renderWeatherDate() {
+
+}
+
+function getFiveDayForecast() {
+
+}
 
 // get items from local storage to save in search history
 
