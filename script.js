@@ -1,17 +1,17 @@
 // Call classes from search column
 let searchBtn = $(".search-button");
 let searchInput = $(".search-input");
-let searchHistory = $(".search-history");
+let searchHistoryEl = $(".search-history");
 
 // Call classes from city-info column 
-let cityName = $(".city-name");
-let currentDate = $(".current-date");
-let weatherIcon = $(".weather-icon");
-let temperature = $(".temperature");
-let humidity = $(".humidity");
-let windSpeed = $(".wind-speed");
-let uvIndex = $(".uv-index");
-let forecastHeader = $(".5-day-forecast-header");
+let cityNameEL = $(".city-name");
+let currentDateEL = $(".current-date");
+let weatherIconEL = $(".weather-icon");
+let temperatureEL = $(".temperature");
+let humidityEL = $(".humidity");
+let windSpeedEL = $(".wind-speed");
+let uvIndexEL = $(".uv-index");
+let forecastHeaderEL = $(".5-day-forecast-header");
 let cardRow = $(".card-row");
 
 // Set current date using moment.js in a current date variable
@@ -24,7 +24,7 @@ if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
 }
 
 else{
-    console.log("searchHistory loaded into searchHistoryDiv");
+    console.log("searchHistory loaded into searchHistoryArray");
     // else, call the function that renders search history into the serach history div
     // renderSearchHistory();
 }
@@ -54,14 +54,22 @@ $(document).on("click", ".historyEntry", function() {
 // Define functions
 
 function renderSearchHistory() {
+    searchHistoryEl.empty();
+    let searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
+    // Create a for loop, to append city names in a list
+    for (let i = 0; i < searchHistoryArray.length; i++) {
+        let newListItem = $("<li>").attr("class", "historyEntry");
+        newListItem.text(searchHistoryArray[i]);
+        searchHistoryEl.prepend(newListItem);
+    }
+}
+
+
+function renderWeatherData() {
 
 }
 
 function getWeather() {
-
-}
-
-function renderWeatherDate() {
 
 }
 
