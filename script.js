@@ -32,12 +32,16 @@ else{
 // Add event listener to search button
 searchBtn.on("click", function(e) {
     e.preventDefault();
+
     if (searchInput.val() === "") {
         alert("You must enter a city");
         return;
     }
 
-})
+    console.log("clicked button")
+    // getWeather(searchInput.val());
+
+});
 
 // get items from local storage to save in search history
 
