@@ -14,11 +14,19 @@ let uvIndex = $(".uv-index");
 let forecastHeader = $(".5-day-forecast-header");
 let cardRow = $(".card-row");
 
-// set current date using moment.js; create a current date variable
+// Set current date using moment.js in a current date variable
 var today = moment().format("DD/MM/YYYY");
 console.log(today);
 
-// set items to local storage
+// Get items from local storage
+if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
+    console.log("searchHistory not found")
+}
+
+else{
+    console.log("searchHistory loaded into searchHistoryArr");
+    // renderSearchHistory();
+}
 
 // add event listener to search button
 
