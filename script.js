@@ -53,6 +53,7 @@ $(document).on("click", ".historyEntry", function() {
 
 // Define functions
 
+// Append all searched items into the search history array as a list
 function renderSearchHistory() {
     searchHistoryEl.empty();
     let searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
@@ -64,7 +65,7 @@ function renderSearchHistory() {
     }
 }
 
-
+// Append all the info about the searched city in the right hand column of the page
 function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, cityWeatherIcon, uvVal) {
     cityNameEl.text(cityName)
     currentDateEl.text(`(${today})`)
@@ -75,16 +76,17 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     weatherIconEl.attr("src", cityWeatherIcon);
 }
 
+// Get the weather information from external source for desired city
 function getWeather() {
 
 }
 
+// Get forecast of 5 days for the desired city from external source
 function getFiveDayForecast() {
 
 }
 
-// get items from local storage to save in search history
+// Define function to append 5 day forecast into card-row
+function createCardForecast() {
 
-// append new elements to the info column so that info of previous city is replaced with that of new city
-
-// set 5 day forecast
+}
