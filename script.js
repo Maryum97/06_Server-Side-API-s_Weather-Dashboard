@@ -157,7 +157,7 @@ function getFiveDayForecast() {
         method: "GET"
     })
     .then(function(fiveDayResponse) {
-        for (var i = 0; i < fiveDayResponse.list.length; i++ ) {
+        for (var i = 0; i < fiveDayResponse.list.length; i+=8 ) { // looping it 8 times for the cards to show up for the next 5 days, maximun
             let cityObj = {
                 date: fiveDayResponse.list[i].dt_txt,
                 icon: fiveDayResponse.list[i].weather[0].icon,
