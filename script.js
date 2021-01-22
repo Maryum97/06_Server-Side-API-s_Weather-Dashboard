@@ -53,7 +53,7 @@ $(document).on("click", ".historyEntry", function () {
     getWeather(thisElement.text());
 })
 
-// Define functions
+// Declaire functions
 
 // Append all searched items into the search history array as a list
 function renderSearchHistory() {
@@ -146,7 +146,7 @@ function getWeather(desiredCity) {
 // Call the function to get a five day forecast of the same city (desiredCity)
 getFiveDayForecast();
 
-// Define the function here;
+// Declaire the function here;
 // within the function getWeather(desiredCity)
 function getFiveDayForecast() {
     cardRow.empty();
