@@ -70,19 +70,33 @@ function renderSearchHistory() {
 
 // Append all the info about the searched city in the right hand column of the page
 function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, cityWeatherIcon, uvVal) {
-    cityNameEl.text(cityName)
-    currentDateEl.text(`(${today})`)
-    tempEl.text(`Temperature: ${cityTemp} °F`);
-    humidityEl.text(`Humidity: ${cityHumidity}%`);
-    windSpeedEl.text(`Wind Speed: ${cityWindSpeed} MPH`);
-    uvIndexEl.text(`UV Index: ${uvVal}`);
+    cityNameEl.text(cityName);
+    currentDateEl.text(today);
+    tempEl.text("Temperature: " + cityTemp + " °F");
+    humidityEl.text("Humidity: " + cityHumidity);
+    windSpeedEl.text("Wind Speed: " + cityWindSpeed + " MPH");
+    uvIndexEl.text("UV Index: " + uvVal);
     weatherIconEl.attr("src", cityWeatherIcon);
     forecastHeaderEL.text("5 Day Forecast");
 }
 
 // Get the weather information from external source for desired city
-function getWeather() {
-
+function getWeather(desiredCity) {
+    let queryURL = "api.openweathermap.org/data/2.5/weather?q=" + desiredCity + "&appid=" + apiKey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .then(function(weatherData) {
+        let cityObj = {
+            cityName: weatherData.name,
+            cityTemp: weatherData.main.temp,
+            cityHumidity: weatherData.main.humidity,
+            cityWindSpeed: weatherData.wind.speed,
+            cityUVIndex: weatherData.coord,
+            cityWeatherIconName: weatherData.weather[0].icon
+        }
+    })
 }
 
 // Get forecast of 5 days for the desired city from external source
