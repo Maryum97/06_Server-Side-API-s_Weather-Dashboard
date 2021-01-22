@@ -1,21 +1,21 @@
 // Call classes from search column
-let searchBtn = $(".search-button");
-let searchInput = $(".search-input");
-let searchHistoryEl = $(".search-history");
+var searchBtn = $(".search-button");
+var searchInput = $(".search-input");
+var searchHistoryEl = $(".search-history");
 
 // Call classes from city-info column 
-let cityNameEL = $(".city-name");
-let currentDateEL = $(".current-date");
-let weatherIconEL = $(".weather-icon");
-let temperatureEL = $(".temperature");
-let humidityEL = $(".humidity");
-let windSpeedEL = $(".wind-speed");
-let uvIndexEL = $(".uv-index");
-let forecastHeaderEL = $(".5-day-forecast-header");
-let cardRow = $(".card-row");
+var cityNameEL = $(".city-name");
+var currentDateEL = $(".current-date");
+var weatherIconEL = $(".weather-icon");
+var temperatureEL = $(".temperature");
+var humidityEL = $(".humidity");
+var windSpeedEL = $(".wind-speed");
+var uvIndexEL = $(".uv-index");
+var forecastHeaderEL = $(".5-day-forecast-header");
+var cardRow = $(".card-row");
 
 // Define API key
-let apiKey = "cef90c55a8408d1a21a2c56bf78fb838";
+var apiKey = "cef90c55a8408d1a21a2c56bf78fb838";
 
 // Set current date using moment.js in a current date variable
 var today = moment().format("DD/MM/YYYY");
@@ -27,9 +27,8 @@ if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
 }
 
 else {
-    console.log("searchHistory loaded into searchHistoryArray");
-    // else, call the function that renders search history into the serach history div
-    // renderSearchHistory();
+    console.log("searchHistory loaded into searchHistoryArr");
+    renderSearchHistory();
 }
 
 // Add event listener to search button
@@ -156,7 +155,8 @@ function getFiveDayForecast() {
         url: queryURL,
         method: "GET"
     })
-    .then(function(fiveDayRespose) {
+    .then(function() {
+        fiveDayReponse;
         for (var i = 0; i < fiveDayReponse.list.length; i++ ) {
             let cityObj = {
                 date: fiveDayReponse.list[i].dt_txt,
@@ -164,6 +164,7 @@ function getFiveDayForecast() {
                 temp: fiveDayReponse.list[i].main.temp,
                 humidity: fiveDayReponse.list[i].main.humidity
             }
+
             let dateStr = cityObj.date;
                 let trimmedDate = dateStr.substring(0, 10); 
                 let weatherIcon = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
@@ -175,6 +176,20 @@ function getFiveDayForecast() {
 }
 
 // Define function to append 5 day forecast into card-row
-function createCardForecast() {
+function createCardForecast(date, icon, temp, humidity) {
+
+    // HTML elements we will create to later
+    let fiveDayCardEl = $("<div>").attr("class", "five-day-card");
+    let cardDate = $("<h3>").attr("class", "card-text");
+    let cardIcon = $("<img>").attr("class", "weatherIcon");
+    let cardTemp = $("<p>").attr("class", "card-text");
+    let cardHumidity = $("<p>").attr("class", "card-text");
+
+    cardRow.append(fiveDayCardEl);
+    cardDate.text(date);
+    cardIcon.attr("src", icon);
+    cardTemp.text(`Temp: ${temp} °F`);
+    cardHumidity.text(`Humidity: ${humidity}%`);
+    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
 
 }
