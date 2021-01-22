@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+p {
+    font-size: 15pt;
+    font-weight: 600;
+}
