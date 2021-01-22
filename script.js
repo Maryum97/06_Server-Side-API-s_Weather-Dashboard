@@ -53,7 +53,7 @@ $(document).on("click", ".historyEntry", function () {
     getWeather(thisElement.text());
 })
 
-// Declaire functions
+// Declare functions
 
 // Append all searched items into the search history array as a list;
 // i.e. names of searhced cities
@@ -127,7 +127,7 @@ function getWeather(desiredCity) {
             if (searchHistoryArray.indexOf(cityObj.cityName) === -1) {
                 searchHistoryArray.push(cityObj.cityName);
                 // store our array of searches and save 
-                localStorage.setItem("searchHistory", JSON.stringify(searchHistoryArr));
+                localStorage.setItem("searchHistory", JSON.stringify(searchHistoryArray));
                 let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
                 renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
                 renderSearchHistory();
@@ -147,7 +147,7 @@ function getWeather(desiredCity) {
 // Call the function to get a five day forecast of the same city (desiredCity)
 getFiveDayForecast();
 
-// Declaire the function here;
+// Declare the function here;
 // within the function getWeather(desiredCity)
 function getFiveDayForecast() {
     cardRow.empty();
@@ -176,7 +176,7 @@ function getFiveDayForecast() {
 }
 
 // Define function to append 5 day forecast into card-row
-function createCardForecast(date, icon, temp, humidity) {
+function createForecastCard(date, icon, temp, humidity) {
 
     // HTML elements we will create to later
     let fiveDayCardEl = $("<div>").attr("class", "five-day-card");
