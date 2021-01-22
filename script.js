@@ -4,14 +4,14 @@ var searchInput = $(".search-input");
 var searchHistoryEl = $(".search-history");
 
 // Call classes from city-info column 
-var cityNameEL = $(".city-name");
-var currentDateEL = $(".current-date");
-var weatherIconEL = $(".weather-icon");
-var temperatureEL = $(".temperature");
-var humidityEL = $(".humidity");
-var windSpeedEL = $(".wind-speed");
-var uvIndexEL = $(".uv-index");
-var forecastHeaderEL = $(".5-day-forecast-header");
+var cityNameEl = $(".city-name");
+var currentDateEl = $(".current-date");
+var weatherIconEl = $(".weather-icon");
+var temperatureEl = $(".temperature");
+var humidityEl = $(".humidity");
+var windSpeedEl = $(".wind-speed");
+var uvIndexEl = $(".uv-index");
+var forecastHeaderEl = $(".5-day-forecast-header");
 var cardRow = $(".card-row");
 
 // Define API key
@@ -72,12 +72,12 @@ function renderSearchHistory() {
 function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, cityWeatherIcon, uvVal) {
     cityNameEl.text(cityName);
     currentDateEl.text(today);
-    tempEl.text("Temperature: " + cityTemp + " °F");
+    temperatureEl.text("Temperature: " + cityTemp + " °F");
     humidityEl.text("Humidity: " + cityHumidity);
     windSpeedEl.text("Wind Speed: " + cityWindSpeed + " MPH");
     uvIndexEl.text("UV Index: " + uvVal);
     weatherIconEl.attr("src", cityWeatherIcon);
-    forecastHeaderEL.text("5 Day Forecast");
+    forecastHeaderEl.text("5 Day Forecast");
 }
 
 // Get the weather information from external source for desired city, including the UV index
