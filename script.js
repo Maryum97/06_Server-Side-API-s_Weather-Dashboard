@@ -26,14 +26,14 @@ if (JSON.parse(localStorage.getItem("searchHistory")) === null) {
     console.log("searchHistory not found")
 }
 
-else{
+else {
     console.log("searchHistory loaded into searchHistoryArray");
     // else, call the function that renders search history into the serach history div
     // renderSearchHistory();
 }
 
 // Add event listener to search button
-searchBtn.on("click", function(e) {
+searchBtn.on("click", function (e) {
     e.preventDefault();
 
     if (searchInput.val() === "") {
@@ -48,7 +48,7 @@ searchBtn.on("click", function(e) {
 
 // When a city is appended to search history, ...
 // its info must show on the page when it is clicked on in the search history list
-$(document).on("click", ".historyEntry", function() {
+$(document).on("click", ".historyEntry", function () {
     console.log("clicked history item")
     let thisElement = $(this);
     getWeather(thisElement.text());
@@ -80,14 +80,14 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     forecastHeaderEL.text("5 Day Forecast");
 }
 
-// Get the weather information from external source for desired city
+// Get the weather information from external source for desired city, including the UV index
 function getWeather(desiredCity) {
-    let queryURL = "api.openweathermap.org/data/2.5/weather?q=" + desiredCity + "&appid=" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + desiredCity + "&appid=" + apiKey + "&units=imperial";
     $.ajax({
         url: queryURL,
         method: "GET"
     })
-    .then(function(weatherData) {
+    .then(function (weatherData) {
         let cityObj = {
             cityName: weatherData.name,
             cityTemp: weatherData.main.temp,
@@ -95,12 +95,63 @@ function getWeather(desiredCity) {
             cityWindSpeed: weatherData.wind.speed,
             cityUVIndex: weatherData.coord,
             cityWeatherIconName: weatherData.weather[0].icon
-        }
+            }
+    let queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apikey + "&lat=" + cityObj.cityUVIndex.lat + "&lon=" + cityObj.cityUVIndex.lon + "&units=imperial";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
     })
-}
+    .then(function(uvData) {
+        if (JSON.parse(localStorage.getItem("searchHistory")) == null) {
+            let searchHistoryArray = [];
+            // Keep user from adding the same city to the searchHistory array list more than once
+            if (searchHistoryArray.indexOf(cityObj.cityName) === -1) {
+                searchHistoryArray.push(cityObj.cityName);
+                // store our array of searches and save 
+                localStorage.setItem("searchHistory", JSON.stringify(searchHistoryArray));
+                let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+                renderSearchHistory();
+            }
 
-// Get forecast of 5 days for the desired city from external source
+            else {
+                console.log("City already in searchHistory. Not adding to history list")
+                let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+            }
+        }
+
+        else {
+            let searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
+            // Keep user from adding the same city to the searchHistory array list more than once
+            if (searchHistoryArray.indexOf(cityObj.cityName) === -1) {
+                searchHistoryArray.push(cityObj.cityName);
+                // store our array of searches and save 
+                localStorage.setItem("searchHistory", JSON.stringify(searchHistoryArr));
+                let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+                renderSearchHistory();
+            }
+            
+            else {
+                console.log("City already in searchHistory. Not adding to history list")
+                let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+            }
+        }
+
+    })
+
+});
+
+// Call the function to get a five day forecast of the same city (desiredCity)
+getFiveDayForecast();
+
+// Define the function here;
+// within the function getWeather(desiredCity)
 function getFiveDayForecast() {
+
+}
 
 }
 
