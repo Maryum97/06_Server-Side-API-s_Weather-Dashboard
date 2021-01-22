@@ -96,7 +96,7 @@ function getWeather(desiredCity) {
             cityUVIndex: weatherData.coord,
             cityWeatherIconName: weatherData.weather[0].icon
             }
-    let queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apikey + "&lat=" + cityObj.cityUVIndex.lat + "&lon=" + cityObj.cityUVIndex.lon + "&units=imperial";
+    let queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + cityObj.cityUVIndex.lat + "&lon=" + cityObj.cityUVIndex.lon + "&units=imperial";
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -156,14 +156,13 @@ function getFiveDayForecast() {
         url: queryURL,
         method: "GET"
     })
-    .then(function() {
-        fiveDayReponse;
-        for (var i = 0; i < fiveDayReponse.list.length; i++ ) {
+    .then(function(fiveDayResponse) {
+        for (var i = 0; i < fiveDayResponse.list.length; i++ ) {
             let cityObj = {
-                date: fiveDayReponse.list[i].dt_txt,
-                icon: fiveDayReponse.list[i].weather[0].icon,
-                temp: fiveDayReponse.list[i].main.temp,
-                humidity: fiveDayReponse.list[i].main.humidity
+                date: fiveDayResponse.list[i].dt_txt,
+                icon: fiveDayResponse.list[i].weather[0].icon,
+                temp: fiveDayResponse.list[i].main.temp,
+                humidity: fiveDayResponse.list[i].main.humidity
             }
 
             let dateStr = cityObj.date;
