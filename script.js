@@ -55,7 +55,8 @@ $(document).on("click", ".historyEntry", function () {
 
 // Declaire functions
 
-// Append all searched items into the search history array as a list
+// Append all searched items into the search history array as a list;
+// i.e. names of searhced cities
 function renderSearchHistory() {
     searchHistoryEl.empty();
     let searchHistoryArray = JSON.parse(localStorage.getItem("searchHistory"));
@@ -188,8 +189,8 @@ function createCardForecast(date, icon, temp, humidity) {
     cardRow.append(fiveDayCardEl);
     cardDate.text(date);
     cardIcon.attr("src", icon);
-    cardTemp.text(`Temp: ${temp} °F`);
-    cardHumidity.text(`Humidity: ${humidity}%`);
+    cardTemp.text("Temp: " + temp + "°F");
+    cardHumidity.text("Humidity: " + humidity + "%");
     fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
 
 }
