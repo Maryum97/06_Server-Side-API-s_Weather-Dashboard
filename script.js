@@ -150,7 +150,26 @@ getFiveDayForecast();
 // Define the function here;
 // within the function getWeather(desiredCity)
 function getFiveDayForecast() {
-
+    cardRow.empty();
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + desiredCity+ "&appid=" + apiKey;
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .then(function(fiveDayRespose) {
+        for (var i = 0; i < fiveDayReponse.list.length; i++ ) {
+            let cityObj = {
+                date: fiveDayReponse.list[i].dt_txt,
+                icon: fiveDayReponse.list[i].weather[0].icon,
+                temp: fiveDayReponse.list[i].main.temp,
+                humidity: fiveDayReponse.list[i].main.humidity
+            }
+            let dateStr = cityObj.date;
+                let trimmedDate = dateStr.substring(0, 10); 
+                let weatherIcon = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
+                createForecastCard(trimmedDate, weatherIcon, cityObj.temp, cityObj.humidity);
+        }
+    })
 }
 
 }
