@@ -135,7 +135,7 @@ function getWeather(desiredCity) {
             
             else {
                 console.log("City already in searchHistory. Not adding to history list")
-                let renderedWeatherIcon = "https:///openweathermap.org/img/w/" + cityObj.cityWeatherIconName} + ".png";
+                let renderedWeatherIcon = "https:///openweathermap.org/img/w/" + cityObj.cityWeatherIconName + ".png";
                 renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
             }
         }
@@ -193,3 +193,5 @@ function createForecastCard(date, icon, temp, humidity) {
     fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
 
 }
+
+// UV index: low, moderate, severe: images on google;
