@@ -20,7 +20,7 @@ The five day forecast underneath the container does NOT include the UV index and
 
 The column on the left shows the search history underneath the search bar and search button. The history displays the names of all the cities searched by the traveller. On clicking on any of the cities in the search history, the weather forecast of that city reappears on the screen. The image below represents the outlook of the webpage as it appears on the browser:
 
-
+![Untitled](https://user-images.githubusercontent.com/73832871/105614146-55875000-5dbf-11eb-888b-5649a4027fe3.png)
 
 <b>SUMMARY:</b>
 
