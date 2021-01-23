@@ -12,6 +12,13 @@ The traveller using the app may learn about the weather of any city aroud the wo
 2. The current date
 3. Temperature (in Fahrenheit)
 4. Humidity (in %)
+5. Wind speed (in MPH)
+6. UV index, represented with a color indicator (green = low, yellow = moderate, and red = high)
+7. The weather icon (image) displayed next to the city name
+
+The five day forecast underneath the container does NOT include the UV index and the wind speed.
+
+The column on the left shows the search history underneath the search bar and search button. The history displays the names of all the cities searched by the traveller. On clicking on any of the cities in the search history, the weather forecast of that city reappears on the screen.
 
 <b>SUMMARY:</b>
 
