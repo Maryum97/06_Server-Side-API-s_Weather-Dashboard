@@ -23,7 +23,7 @@ p {
 }
 
 .five-day-card {
-    margin-left: 58.5px;
+    margin-left: 25px;
     width: 175px;
     height: auto;
     border-radius: 5px;
@@ -48,6 +48,31 @@ p {
 }
 
 img {
-    width: auto;
+    width: 100px;
     height: auto;
+}
+
+.low {
+    background-color: green;
+    padding: 8px;
+    width: 170px;
+    height: 76px;
+    border: 1px solid green;
+}
+
+.moderate {
+    background-color: yellow;
+    padding: 8px;
+    width: 170px;
+    height: 60px;
+    border: 1px solid yellow;
+    
+}
+
+.high {
+    background-color: red;
+    padding: 8px;
+    width: 170px;
+    height: 60px;
+    border: 1px solid red;
 }

@@ -78,6 +78,26 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     uvIndexEl.text("UV Index: " + uvVal);
     weatherIconEl.attr("src", cityWeatherIcon);
     forecastHeaderEl.text("5 Day Forecast");
+
+    // Set the color of UV index div
+
+    function uvColor () {
+        if (uvVal <= 4) {
+            uvIndexEl.addClass("low");
+        }
+
+        else if (uvVal <= 7) {
+            uvIndexEl.addClass("moderate");
+        }
+
+        else if (uvVal > 7) {
+            uvIndexEl.addClass("high");
+        }
+
+    }
+
+    uvColor();
+
 }
 
 // Get the weather information from external source for desired city, including the UV index
@@ -151,7 +171,7 @@ getFiveDayForecast();
 // within the function getWeather(desiredCity)
 function getFiveDayForecast() {
     cardRow.empty();
-    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + desiredCity+ "&appid=" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + desiredCity+ "&appid=" + apiKey  + "&units=imperial";
     $.ajax({
         url: queryURL,
         method: "GET"
