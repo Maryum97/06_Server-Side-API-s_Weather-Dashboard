@@ -37,6 +37,16 @@ p {
     padding: 10px 30px 5px 10px;
 }
 
+.five-day-container h1 {
+    margin-top: 25px;
+    margin-left: 5%;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+}
+
 img {
     width: auto;
     height: auto;
