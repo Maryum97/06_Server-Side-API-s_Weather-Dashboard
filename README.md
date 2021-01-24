@@ -33,7 +33,7 @@ In short, this web application is very useful for travellers and holiday trip or
 
 As per the assessment criteria, I have included the link to the website below:
 
-<a href="https://github.com/Maryum97/06_Server-Side-API-s_Weather-Dashboard">My Weather Dashboard</a>
+<a href="https://maryum97.github.io/06_Server-Side-API-s_Weather-Dashboard/">My Weather Dashboard</a>
 
 The website has been validated using the link below:
 
