@@ -212,7 +212,7 @@ function createForecastCard(date, icon, temp, humidity) {
     let cardHumidity = $("<p>").attr("class", "card-text");
 
     cardRow.append(fiveDayCardEl);
-    cardDate.text(today);
+    cardDate.text(date);
     cardIcon.attr("src", icon);
     cardTemp.text("Temp: " + temp + "°F");
     cardHumidity.text("Humidity: " + humidity + "%");
