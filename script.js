@@ -82,16 +82,22 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     // Set the color of UV index div
 
     function uvColor () {
-        if (uvVal <= 4) {
+        if (uvVal < 3) {
             uvIndexEl.addClass("low");
+            uvIndexEl.removeClass("moderate");
+            uvIndexEl.removeClass("high");
         }
 
-        else if (uvVal <= 7) {
+        else if (uvVal >= 3 && uvVal <= 7) {
             uvIndexEl.addClass("moderate");
+            uvIndexEl.removeClass("low");
+            uvIndexEl.removeClass("high");
         }
 
-        else if (uvVal > 7) {
+        else if (uvVal > 8) {
             uvIndexEl.addClass("high");
+            uvIndexEl.removeClass("low");
+            uvIndexEl.removeClass("moderate");
         }
 
     }

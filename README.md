@@ -31,4 +31,12 @@ In short, this web application is very useful for travellers and holiday trip or
 4. JavaScript/jQuery
 5. AJAX and API's
 
+As per the assessment criteria, I have included the link to the website below:
+
+<a></a>
+
+The website has been validated using the link below:
+
+<a></a>
+
 <b>SOURCES:</b>
