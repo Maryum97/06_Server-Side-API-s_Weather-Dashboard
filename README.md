@@ -23,7 +23,7 @@ The column on the left shows the search history underneath the search bar and se
 ![Untitled](https://user-images.githubusercontent.com/73832871/105614221-f37b1a80-5dbf-11eb-8ae4-2f77e3332c6e.png)
 
 <b>SUMMARY:</b><br>
-In short, this web application is very useful for travellers and holiday trip organisers, so that they may have a convenient means to read the current and future weather forecast of any city around the world. This application has been made possible with the use of the following programming tools:
+In short, this web application is very useful for travellers and holiday trip organisers, so that they may have a convenient means to read the current and future weather forecast of any city (, state, or country) around the world. This application has been made possible with the use of the following programming tools:
 
 1. HTML
 2. CSS
@@ -35,7 +35,7 @@ As per the assessment criteria, I have included the link to the website below:
 
 <a href="https://maryum97.github.io/06_Server-Side-API-s_Weather-Dashboard/" target="_blank">My Weather Dashboard</a>
 
-<b>SOURCES:</b><br>
+<b>SOURCES:</b>
 1. <a href="https://www.w3schools.com/" target="_blank">www.w3schools.com</a>
 2. <a href="https://stackoverflow.com/" target="_blank">stackoverflow.com</a>
 3. <a href="https://openweathermap.org/api" target="_blank">openweathermap.org/api</a>
