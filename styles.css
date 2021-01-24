@@ -53,26 +53,26 @@ img {
 }
 
 .low {
-    background-color: green;
-    padding: 8px;
-    width: 170px;
-    height: 76px;
-    border: 1px solid green;
-}
-
-.moderate {
-    background-color: yellow;
+    background-color: rgba(11, 128, 0, 0.74);
     padding: 8px;
     width: 170px;
     height: 60px;
-    border: 1px solid yellow;
+    border: 1px solid rgba(11, 128, 0, 0.74);
+}
+
+.moderate {
+    background-color: rgb(255, 238, 0);
+    padding: 8px;
+    width: 170px;
+    height: 60px;
+    border: 1px solid rgb(255, 238, 0);
     
 }
 
 .high {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.897);
     padding: 8px;
     width: 170px;
     height: 60px;
-    border: 1px solid red;
+    border: 1px solid rgba(255, 0, 0, 0.897);
 }
