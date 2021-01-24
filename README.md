@@ -23,5 +23,11 @@ The column on the left shows the search history underneath the search bar and se
 ![Untitled](https://user-images.githubusercontent.com/73832871/105614221-f37b1a80-5dbf-11eb-8ae4-2f77e3332c6e.png)
 
 <b>SUMMARY:</b>
+In short, this web application is very useful for travellers and holiday trip organisers, so that they may have a convenient means to read the current and future weather forecast of any city around the world. This application has been made possible with the use of the following programming tools:
+
+1. 
+2. 
+3. 
+4. 
 
 <b>SOURCES:</b>
